@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DrivenEats</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="cabecalho">
+      <div class="marca">DrivenEats</div>
+      <div class="subtitulo">Sua comida em 6 minutos</div>
+    </div>
+    <div class="fecharPedido desativado">
+      <div class="titulo">Confirme seu Pedido</div>
+      <div class = "listagem">
+        <div class="listanome">
+          <div><p id="nomecomida">nomecomida</p> </div>
+          <div><p id="nomedrink">nomedrink</p> </div>
+          <div><p id="nomedessert">nomedessert</p> </div>
+          <div class = "valor"><p>TOTAL</p></div>
+        </div>
+        <div class="listavalor">
+          <p id="valorcomida">valorcomida</p>
+          <p id="valorbebida">valordrink</p>
+          <p id="valorsobremesa">valordessert</p>
+          <div class = "valor"><p id="valorFinal">valor</p></div>
+        </div>
+    </div>
+      <div class="botoes">
+        <button class="botaofinalizador" onclick="openWhatsApp()">Tudo certo, pode pedir!</button>
+        <div class="cancelar" onclick="closeWindow()">Cancelar</div>
+      </div>
+    </div>
+    <div class="conteudo">
+      <div class="pratos">
+        <div class="guia">Primeiro, seu prato</div>
+        <div class="opcoes">
+          <div
+            class="pedido comida frango"
+            onclick="selecionarPedido(this, 'Frango Yin Yang', 18.8)"
+          >
+            <img src="imagens/pf_frango.jpg" />
+            <h1>Frango Yin Yang</h1>
+            <h2>Acompanha Batata e salada</h2>
+            <h3>R$ 18.80</h3>
+            <div class="icone frango">
+              <ion-icon name="checkmark-circle"></ion-icon>
+            </div>
+          </div>
+          <div
+            class="pedido comida calabresa"
+            onclick="selecionarPedido(this, 'Calabresa Malandra', 20)"
+          >
+            <img src="imagens/pf_calabresa.png" />
+            <h1>Calabresa Malandra</h1>
+            <h2>
+              Acompanha batata frita, pure de batata, salada, feijão e farofa
+            </h2>
+            <h3>R$ 20.00</h3>
+            <div class="icone calabresa">
+              <ion-icon name="checkmark-circle"></ion-icon>
+            </div>
+          </div>
+          <div
+            class="pedido comida carne"
+            onclick="selecionarPedido(this, 'Carne Yang Yin',17.5)"
+          >
+            <img src="imagens/pf_carne.jpg" />
+            <h1>Carne Yang Yin</h1>
+            <h2>Acompanha feijão, salada e farofa</h2>
+            <h3>R$ 17.50</h3>
+            <div class="icone carne">
+              <ion-icon name="checkmark-circle"></ion-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bebida">
+        <div class="guia">Agora, sua bebida</div>
+        <div class="opcoes">
+          <div
+            class="pedido drink coca-cola"
+            onclick="selecionarPedido(this, 'Coca-Cola',5.8)"
+          >
+            <img src="imagens/coca.png" />
+            <h1>Coquita</h1>
+            <h2>Bem Geladita</h2>
+            <h3>R$ 5.80</h3>
+            <div class="icone coca-cola">
+              <ion-icon name="checkmark-circle"></ion-icon>
+            </div>
+          </div>
+          <div
+            class="pedido drink fanta"
+            onclick="selecionarPedido(this, 'Fanta', 2.9)"
+          >
+            <img src="imagens/fanta.png" />
+            <h1>Fantita</h1>
+            <h2>Praticamente congelada</h2>
+            <h3>R$ 2.90 (50% OFF!)</h3>
+            <div class="icone fanta">
+              <ion-icon name="checkmark-circle"></ion-icon>
+            </div>
+          </div>
+          <div
+            class="pedido drink suco"
+            onclick="selecionarPedido(this,'Suco',7.2)"
+          >
+            <img src="imagens/suco.jpg" />
+            <h1>Suquito</h1>
+            <h2>De Morango, Caju, abacaxi, Melância ou Lichia</h2>
+            <h3>R$ 7.20</h3>
+            <div class="icone suco">
+              <ion-icon name="checkmark-circle"></ion-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sobremesa">
+        <div class="guia">Por fim, sua sobremesa</div>
+        <div class="opcoes">
+          <div
+            class="pedido dessert brownie"
+            onclick="selecionarPedido(this,'Brownie',13.01)"
+          >
+            <img src="imagens/brownie.jpg" />
+            <h1>Brownie</h1>
+            <h2>Brownie beeeeeeeem especial</h2>
+            <h3>R$ 13.01</h3>
+            <div class="icone brownie">
+              <ion-icon name="checkmark-circle"></ion-icon>
+            </div>
+          </div>
+          <div
+            class="pedido dessert pudim"
+            onclick="selecionarPedido(this,'Pudim',12.9)"
+          >
+            <img src="imagens/pudim.jpg" />
+            <h1>Pudim</h1>
+            <h2>Melhor pudim do Brasil</h2>
+            <h3>R$ 12.90</h3>
+            <div class="icone pudim">
+              <ion-icon name="checkmark-circle"></ion-icon>
+            </div>
+          </div>
+          <div
+            class="pedido dessert mousse"
+            onclick="selecionarPedido(this,'Mousse',11.2)"
+          >
+            <img src="imagens/mouse.jpg" />
+            <h1>Mouse</h1>
+            <h2>Segundo Melhor Mouse do mundo</h2>
+            <h3>R$ 11.20</h3>
+            <div class="icone mousse">
+              <ion-icon name="checkmark-circle"></ion-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="barrafim">
+      <div class="botao negado" onclick="fazerPedido()">
+        <p1 id="altertext">
+          Selecione os 3 itens <br />para fechar o pedido
+        </p1>
+      </div>
+    </div>
+    <script src="scripts.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
